@@ -1,0 +1,14 @@
+﻿@page
+@model myrazorwebapp.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+<h1>Enter Customer Name:</h1>
+<form method="POST">
+    <div>Name: <input asp-for="Customer.Name" /> </div>
+    <input type="submit" />
+</form>
+
