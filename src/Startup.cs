@@ -24,14 +24,7 @@ namespace myrazorwebapp
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
-
+        {           
             // This will create in memory databse with name "Demo" with the AppDbContext, where our data table sctucture i.e. poco is defined
             services.AddDbContext<AppDbContext>(options =>
             {
@@ -51,13 +44,9 @@ namespace myrazorwebapp
             else
             {
                 app.UseExceptionHandler("/Error");
-                app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
-
             app.UseMvc();
         }
     }
